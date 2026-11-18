@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root,
+html[data-theme="light"] {
+  color-scheme: light;
+  --canvas: #e4e7ec;
+  --surface: #f4f6f8;
+  --surface-card: #f8f9fb;
+  --surface-elevated: #dce0e6;
+  --surface-hover: #cfd5dd;
+  --ink: #14171a;
+  --ink-soft: #434952;
+  --muted: #5b626d;
+  --line: #cbd2db;
+  --line-strong: #aab3bf;
+  --accent: #0066e6;
+  --roblox-green: #009e64;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #111214;
+  --surface: #191b1d;
+  --surface-card: #232527;
+  --surface-elevated: #2e3033;
+  --surface-hover: #393b3d;
+  --ink: #f5f7fa;
+  --ink-soft: #b4b8bf;
+  --muted: #8b8f96;
+  --line: #313438;
+  --line-strong: #46494f;
+  --accent: #3b9eff;
+  --roblox-green: #00b06f;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-card: var(--surface-card);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-hover: var(--surface-hover);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-roblox-green: var(--roblox-green);
+  --font-sans: var(--font-jakarta);
+  --font-mono: var(--font-mono-label);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  color: var(--ink);
+  background-color: var(--canvas);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+html[data-theme="dark"] .tool-icon-invert {
+  filter: invert(1);
+}
+
+html[data-theme="dark"] .tool-icon-adaptive {
+  filter: invert(0.92) hue-rotate(180deg);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
